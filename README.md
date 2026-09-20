@@ -1,7 +1,7 @@
-# Channel Filter
+# Channel Filter Camera — Web
 
-Android 13+ (API 33+) visual channel-isolation aid for display calibration. Target SDK 36.
+Browser-based RGB / Red / Green / Blue channel-isolation camera for visual display calibration.
 
-Modes: RGB, Red, Green, Blue. Captures are saved to Pictures/ChannelFilter on modern Android.
+Open `index.html` from an HTTPS web server, then use Chrome on Android and allow camera access. For AVS HD 709 flashing color bars, select **BLUE**.
 
-The processed mode is the primary calibration path. Blue mode is intended for AVS HD 709-style flashing color bars. RAW capability is detected through Camera2; actual RAW_SENSOR capture/processing should be treated as device-dependent rather than guaranteed live preview.
+The app uses the browser camera API and Canvas, saves the filtered image as PNG, and attempts manual exposure/white-balance controls when the browser/device exposes them. Browser APIs do not provide Android Camera2 RAW_SENSOR access, so this is the processed-camera version rather than the native RAW implementation.
